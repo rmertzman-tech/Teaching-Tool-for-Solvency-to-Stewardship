@@ -58,73 +58,57 @@
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   @media (max-width:820px){ .two-col{grid-template-columns:1fr} }
 
-  /* Tooltip (popover) */
-  .info {
-    display:inline-flex;align-items:center;justify-content:center;
-    width:18px;height:18px;font-size:12px;line-height:1;
-    border-radius:50%;background:#eef2ff;color:#4338ca;border:1px solid var(--line);
-    margin-left:6px;cursor:pointer;user-select:none;
-  }
-  .info:focus{outline:2px solid #93c5fd;outline-offset:2px}
-  #tooltip {
-    position:fixed;z-index:9999;max-width:320px;min-width:200px;
-    background:#111827;color:#ffffff;border-radius:10px;padding:10px 12px;
-    border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 30px rgba(0,0,0,.25);
-    display:none;font-size:.92rem;
-  }
-  #tooltip h4{margin:.1rem 0 .35rem;font-size:1rem}
-  #tooltip p{margin:.25rem 0 .25rem;color:#e5e7eb}
-  #tooltip .legend{color:#cbd5e1}
-
   /* PRINT: only print the cheat sheet panel cleanly */
   @media print{
     body *{ visibility:hidden !important; }
     #cheatSheetPage, #cheatSheetPage *{ visibility:visible !important; }
     #cheatSheetPage{ position:absolute; left:0; top:0; width:100%; border:none !important; box-shadow:none !important; }
   }
-
-  /* Callout emphasis */
-  .callout{background:#111827;color:#fff;border:1px solid #0b1220;border-radius:12px;padding:12px;margin:12px 0}
 </style>
 </head>
 <body>
 <header class="card">
   <h1>System Harms &amp; Social Contract Lab <span class="badge">Student-Guide + Glossary</span></h1>
-  <p class="muted small">
+
+  <!-- Top rationale (moved up) -->
+  <div class="card" style="border-left:6px solid #2563eb;background:#f8fbff">
+    <h3 style="margin:.25rem 0 .35rem">Why this matters</h3>
+    <p class="small" style="margin:.25rem 0">
+      Living ethically in a market society means designing the <b>rules</b> you will support (with your purchases, votes, and voice),
+      showing the <b>trade-offs</b> honestly, and taking <b>practical steps</b> that align with your deepest commitments. This lab helps you practice that.
+    </p>
+  </div>
+
+  <p class="muted small" style="margin-top:10px">
     No logins, no tracking, no cookies. <b>Export</b> your work (JSON) to submit or re-load later.
     <br>
-    Jump to: <a href="#cheatSection">Cheat Sheet</a> · <a href="#glossary">Glossary</a>
+    Jump to: <a href="#lensGuide">Lens Guide</a> · <a href="#cheatSection">Cheat Sheet</a> · <a href="#glossary">Glossary</a>
   </p>
-
-  <!-- TOP CALLOUT: Why this matters (moved up for emphasis) -->
-  <div class="callout" role="note" aria-label="Why this matters">
-    <b>Why this matters:</b> Living ethically in a market society means designing the <b>rules</b> you will support (with your purchases, votes, and voice), showing the <b>trade-offs</b> honestly, and taking <b>practical steps</b> that align with your deepest commitments. This lab helps you practice that.
-  </div>
 
   <!-- Built-in Guide -->
   <details class="guide" open>
-    <summary>📘 Quick Start & Key Concepts</summary>
+    <summary>📘 Quick Start & Key Terms</summary>
     <div class="row">
       <div class="col">
         <h3>Quick Start (5 steps)</h3>
         <ol class="small">
           <li><b>Pick a Context</b> (e.g., apparel or electronics).</li>
-          <li><b>Toggle Guardrails</b> (rules of the game) and watch the <i>Impacts</i> move.</li>
+          <li><b>Toggle Guardrails</b> (rules of the game) and watch <i>Impacts</i> move.</li>
           <li>Read the <b>Capabilities Check</b> to see who gains/loses what.</li>
           <li>Write a short <b>Memo</b> using the three lenses (Social Contract, Capabilities, Care).</li>
           <li><b>Export</b> your JSON artifact to submit.</li>
         </ol>
         <div class="card small" style="border-style:dashed">
-          <b>Why this is ethical training:</b> You practice <i>objectivity-as-procedure</i>. You make rules explicit, show trade-offs, and justify choices publicly using shared lenses. That’s how pluralistic communities coordinate toward better outcomes.
+          <b>Objectivity-as-procedure:</b> You make rules explicit, show trade-offs, and justify choices publicly using shared lenses.
         </div>
       </div>
       <div class="col">
-        <h3>Key Terms (short, usable)</h3>
+        <h3>Key Terms (always visible)</h3>
         <ul class="compact small">
-          <li><b>Guardrail</b>: A rule that changes incentives (e.g., living wage, right to repair).</li>
-          <li><b>Impacts</b>: Bars map effects: Workers & Environment → right is better; Cost → left is cheaper.</li>
-          <li><b>Capabilities</b>: Basic functionings protected/expanded (Decent Work, Health & Safety, Education & Skill, Voice & Recognition, Ecological Stability).</li>
-          <li><b>Three Lenses</b>: Social Contract, Capabilities, Care & Proximity.</li>
+          <li><b>Guardrail</b>: A rule that changes incentives (e.g., living wage, right to repair). Each guardrail shows a plain-text “why?” note.</li>
+          <li><b>Impacts</b>: Bars map effects: Workers &amp; Environment → right is better; Cost → left is cheaper (−5…+5 scale).</li>
+          <li><b>Capabilities</b>: Basic functionings protected/expanded (Decent Work, Health &amp; Safety, Education &amp; Skill, Voice &amp; Recognition, Ecological Stability).</li>
+          <li><b>Three Lenses</b>: <i>Social Contract</i> (fair terms if positions unknown), <i>Capabilities</i> (which functionings rise/are at risk), <i>Care &amp; Proximity</i> (near-term obligations + action).</li>
         </ul>
       </div>
     </div>
@@ -132,16 +116,35 @@
 </header>
 
 <main>
+  <!-- Lens Guide (expanded text so no tooltips are needed) -->
+  <section class="card" id="lensGuide">
+    <h2>Lens Guide <span class="badge">How to Write Your Memo</span></h2>
+    <div class="grid">
+      <div>
+        <h3>Social Contract</h3>
+        <p class="small">Ask whether the rules would be acceptable if you didn’t know your position (worker, consumer, neighbor). Name who benefits, who bears costs, and why that distribution is (or isn’t) fair under uncertainty.</p>
+      </div>
+      <div>
+        <h3>Capabilities</h3>
+        <p class="small">Identify which basic functionings improve and for whom. Note remaining risks and propose one concrete mitigation (e.g., add “voice council” if disclosure alone leaves workers powerless).</p>
+      </div>
+      <div>
+        <h3>Care &amp; Proximity</h3>
+        <p class="small">Consider those relationally near you (roommates, classmates, local workers). What do you owe given interdependence? Commit to one practical action this month.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Context -->
   <section class="card">
-    <h2>1) Pick a Context <span class="badge">Start Here</span> <span class="info" data-key="context" aria-label="What is a context?" tabindex="0">i</span></h2>
+    <h2>1) Pick a Context <span class="badge">Start Here</span></h2>
     <div class="row">
       <div class="col">
-        <label for="context">Context <span class="info" data-key="context" aria-label="Context help" tabindex="0">i</span></label>
+        <label for="context">Context</label>
         <select id="context"></select>
       </div>
       <div class="col">
-        <label for="preset">Quick Preset <span class="info" data-key="preset" aria-label="Preset help" tabindex="0">i</span></label>
+        <label for="preset">Quick Preset</label>
         <select id="preset">
           <option value="custom">— Start from scratch —</option>
           <option value="minimal">Minimal Guardrails</option>
@@ -159,7 +162,7 @@
 
   <!-- Guardrails -->
   <section class="card">
-    <h2>2) Toggle Guardrails <span class="badge">Rules of the Game</span> <span class="info" data-key="guardrails" aria-label="What are guardrails?" tabindex="0">i</span></h2>
+    <h2>2) Toggle Guardrails <span class="badge">Rules of the Game</span></h2>
     <div id="guardrails"></div>
     <div class="controls">
       <button id="clearAll">Clear</button>
@@ -178,23 +181,23 @@
 
   <!-- Impacts -->
   <section class="card">
-    <h2>3) Predicted Impacts <span class="badge">Visualize Trade-offs</span> <span class="info" data-key="impacts" aria-label="What are impacts?" tabindex="0">i</span></h2>
+    <h2>3) Predicted Impacts <span class="badge">Visualize Trade-offs</span></h2>
     <div class="grid">
       <div>
         <h3>Aggregate Effects</h3>
-        <div class="kpi"><span>Workers (dignity, safety) <span class="info" data-key="workers" aria-label="Workers impact help" tabindex="0">i</span></span><b id="k_workers">—</b></div>
+        <div class="kpi"><span>Workers (dignity, safety)</span><b id="k_workers">—</b></div>
         <div class="bar"><i id="bar_workers" style="width:50%"></i></div>
 
-        <div class="kpi"><span>Environment (footprint, waste) <span class="info" data-key="environment" aria-label="Environment impact help" tabindex="0">i</span></span><b id="k_env">—</b></div>
+        <div class="kpi"><span>Environment (footprint, waste)</span><b id="k_env">—</b></div>
         <div class="bar"><i id="bar_env" style="width:50%"></i></div>
 
-        <div class="kpi"><span>Consumer Cost (you pay) <span class="info" data-key="cost" aria-label="Cost impact help" tabindex="0">i</span></span><b id="k_cost">—</b></div>
+        <div class="kpi"><span>Consumer Cost (you pay)</span><b id="k_cost">—</b></div>
         <div class="bar"><i id="bar_cost" style="width:50%"></i></div>
 
-        <p class="hint">Workers & Environment: farther right is better. Cost: farther left is cheaper.</p>
+        <p class="hint">Workers &amp; Environment: farther right is better. Cost: farther left is cheaper.</p>
       </div>
       <div>
-        <h3>Capabilities Check (who gains what) <span class="info" data-key="capabilities" aria-label="Capabilities help" tabindex="0">i</span></h3>
+        <h3>Capabilities Check (who gains what)</h3>
         <div id="caps"></div>
         <p class="hint">These summarize basic functionings impacted by your chosen guardrails.</p>
       </div>
@@ -208,20 +211,20 @@
 
   <!-- Lenses -->
   <section class="card">
-    <h2>4) Write Your Memo <span class="badge">Three Lenses</span> <span class="info" data-key="memo" aria-label="Memo help" tabindex="0">i</span></h2>
+    <h2>4) Write Your Memo <span class="badge">Three Lenses</span></h2>
     <div class="grid">
       <div>
-        <label for="memo_sc">Social Contract <span class="info" data-key="social_contract" aria-label="Social Contract help" tabindex="0">i</span></label>
+        <label for="memo_sc">Social Contract</label>
         <textarea id="memo_sc" placeholder="Who benefits, who bears costs? Would this be acceptable if you didn’t know your position?"></textarea>
         <p class="hint small">Ask: is this rule set fair to anyone who could end up a worker, consumer, or neighbor?</p>
       </div>
       <div>
-        <label for="memo_cap">Capabilities <span class="info" data-key="capabilities" aria-label="Capabilities help" tabindex="0">i</span></label>
+        <label for="memo_cap">Capabilities</label>
         <textarea id="memo_cap" placeholder="Which basic capabilities are raised or risked—and for whom?"></textarea>
         <p class="hint small">Name 1–2 capabilities improved and any risks that remain; propose how to mitigate them.</p>
       </div>
     </div>
-    <label for="memo_care" style="margin-top:.5rem">Care & Proximity <span class="info" data-key="care" aria-label="Care & Proximity help" tabindex="0">i</span></label>
+    <label for="memo_care" style="margin-top:.5rem">Care &amp; Proximity</label>
     <textarea id="memo_care" placeholder="Who is relationally near (roommates, classmates, local workers)? What obligations arise from proximity/dependence? What will you do this month?"></textarea>
     <div class="controls">
       <button id="fillTemplate">Insert Template</button>
@@ -231,7 +234,7 @@
 
   <!-- Export / Import -->
   <section class="card">
-    <h2>Export / Import <span class="badge">No Account Needed</span> <span class="info" data-key="export" aria-label="Export/Import help" tabindex="0">i</span></h2>
+    <h2>Export / Import <span class="badge">No Account Needed</span></h2>
     <p class="muted small">Export your artifact for grading or to import later. Nothing is stored here.</p>
     <textarea id="out" class="mono" rows="10" spellcheck="false" aria-label="Exported JSON"></textarea>
     <div class="controls">
@@ -247,7 +250,7 @@
 
   <!-- Cheat Sheet (Printable) -->
   <section class="card" id="cheatSection">
-    <h2>One-Page Cheat Sheet <span class="badge">Printable</span> <span class="info" data-key="cheat" aria-label="Cheat sheet help" tabindex="0">i</span></h2>
+    <h2>One-Page Cheat Sheet <span class="badge">Printable</span></h2>
     <p class="muted small">Use this during class. Click <b>Print Cheat Sheet</b> to print or save as PDF (only this page will print).</p>
     <div class="controls">
       <button id="printCheatBtn">Print Cheat Sheet</button>
@@ -273,10 +276,10 @@
             <li><b>Export</b> JSON artifact and submit.</li>
           </ol>
 
-          <h3>Bars & Pills</h3>
+          <h3>Bars &amp; Pills</h3>
           <ul class="compact small">
             <li><b>Workers</b> (→ right better), <b>Environment</b> (→ right better), <b>Cost</b> (← left cheaper).</li>
-            <li><b>Capabilities</b> pills show who gains: Decent Work, Health & Safety, Education & Skill, Voice & Recognition, Ecological Stability.</li>
+            <li><b>Capabilities</b> pills show who gains: Decent Work, Health &amp; Safety, Education &amp; Skill, Voice &amp; Recognition, Ecological Stability.</li>
           </ul>
 
           <h3>Common Guardrail Pairs</h3>
@@ -317,71 +320,80 @@
 
   <!-- Glossary -->
   <section class="card" id="glossary">
-    <h2>Glossary <span class="badge">PRF · SPTS · OS1 · OS2</span> <span class="info" data-key="glossary" aria-label="Glossary help" tabindex="0">i</span></h2>
+    <h2>Glossary <span class="badge">PRF · SPTS · OS1 · OS2</span></h2>
     <div class="grid">
       <div>
         <h3>Core FAIM-QIRF Terms</h3>
         <dl class="small">
-          <dt><b>PRF — Phenomenal Reference Frame</b> <span class="info" data-key="PRF" aria-label="PRF help" tabindex="0">i</span></dt>
+          <dt><b>PRF — Phenomenal Reference Frame</b></dt>
           <dd>Your current internal model (identity kernel, filters, lexicon, goals, learned expectations, standpoint) that generates what is visible/legible now. PRF produces your OS1 experience and constrains which OS2 procedures feel legitimate.</dd>
 
-          <dt><b>SPTS — Standpoint Set</b> <span class="info" data-key="SPTS" aria-label="SPTS help" tabindex="0">i</span></dt>
+          <dt><b>SPTS — Standpoint Set</b></dt>
           <dd>Your relatively stable social/positional roles (e.g., student, caregiver, worker) that bias default gates (voice, standing) and evidence weights. Slow-changing compared to moment-to-moment perspectives.</dd>
 
-          <dt><b>OS1 — Phenomenal Experience Layer</b> <span class="info" data-key="OS1" aria-label="OS1 help" tabindex="0">i</span></dt>
+          <dt><b>OS1 — Phenomenal Experience Layer</b></dt>
           <dd>The lived, first-person field: what you notice as salient, how it feels, what seems obvious. Shaped by PRF and current task/context.</dd>
 
-          <dt><b>OS2 — Procedural/Constructor Layer</b> <span class="info" data-key="OS2" aria-label="OS2 help" tabindex="0">i</span></dt>
-          <dd>Capabilities and constructors: explicit rules, warrants, audits, and change-logs you can show, test, and improve with others. OS2 can revise PRF over time.</dd>
+          <dt><b>OS2 — Procedural/Constructor Layer</b></dt>
+          <dd>Capabilities and constructors: explicit rules, audits, and change-logs you can show, test, and improve with others. OS2 can revise PRF over time.</dd>
 
-          <dt><b>IK — Identity Kernel</b> <span class="info" data-key="IK" aria-label="Identity Kernel help" tabindex="0">i</span></dt>
+          <dt><b>IK — Identity Kernel</b></dt>
           <dd>Your 2–4 non-negotiable commitments (e.g., “no exploitation,” “tell the truth”).</dd>
 
-          <dt><b>BROA+</b> <span class="info" data-key="BROA" aria-label="BROA help" tabindex="0">i</span></dt>
+          <dt><b>BROA+</b></dt>
           <dd>Beliefs, Rules, Ontology, Authenticity: filters that shape interpretation and action.</dd>
 
-          <dt><b>Capabilities</b> <span class="info" data-key="capabilities" aria-label="Capabilities help" tabindex="0">i</span></dt>
+          <dt><b>Capabilities</b></dt>
           <dd>Reliable methods you can execute (e.g., weekly cash-flow review, impact screen).</dd>
 
-          <dt><b>Constructors</b> <span class="info" data-key="constructor" aria-label="Constructor help" tabindex="0">i</span></dt>
+          <dt><b>Constructors</b></dt>
           <dd>Persistent procedures with triggers, inputs, outputs, and review (e.g., right-to-repair purchase policy with a monthly audit).</dd>
 
-          <dt><b>Meta-Constructors</b> <span class="info" data-key="meta_constructor" aria-label="Meta-Constructor help" tabindex="0">i</span></dt>
+          <dt><b>Meta-Constructors</b></dt>
           <dd>Learning loops that evaluate/improve constructors on a schedule (e.g., monthly rubric + “what changed?” memo).</dd>
 
-          <dt><b>ATCF mini</b> <span class="info" data-key="ATCF" aria-label="ATCF help" tabindex="0">i</span></dt>
+          <dt><b>ATCF mini</b></dt>
           <dd>Rubric across Identity Kernel alignment (IK), Recognition (RC), Diversity Inclusion (DI), Temporal Coherence (TC) to track procedural quality over time.</dd>
         </dl>
       </div>
       <div>
-        <h3>How They Connect Here</h3>
-        <ul class="small">
-          <li><b>PRF → OS1:</b> Shapes what harms/benefits you notice in a context.</li>
-          <li><b>OS2:</b> You choose guardrails, read effects, and write a memo (procedural justification).</li>
-          <li><b>Pluralism by design:</b> Different PRFs can still coordinate if their chosen guardrails are <i>functionally equivalent</i> toward overlapping goods.</li>
-          <li><b>Change over time:</b> Using the lab repeatedly updates your PRF (you notice new harms/benefits), and your constructors get sharper via meta-review.</li>
-        </ul>
+        <h3>Terms Used in This App</h3>
+        <dl class="small">
+          <dt><b>Context</b></dt>
+          <dd>The industry or setting you’re analyzing. Different contexts concentrate different harms/benefits, so guardrails that work in one may be irrelevant in another.</dd>
 
-        <h3>Scales You’ll See</h3>
-        <ul class="small">
-          <li><b>Impact bars:</b> −5 (worse) … 0 (no change) … +5 (better) for Workers/Environment; Cost uses the same range but “better” is cheaper (left).</li>
-          <li><b>Capabilities pills:</b> Show net direction and strength for basic functionings affected by your chosen guardrails.</li>
-        </ul>
+          <dt><b>Guardrails</b></dt>
+          <dd>Explicit rules that change incentives (e.g., living wage, repairability). Think of these as a small “constitution” for your chosen context. Each guardrail card shows a plain-text <i>why?</i> note and its directional impacts.</dd>
+
+          <dt><b>Predicted Impacts</b></dt>
+          <dd>Simple teaching-model vectors (−5…+5). Workers &amp; Environment move right when better; Cost moves left when cheaper. Bars summarize aggregate effects; capability pills show specific functionings.</dd>
+
+          <dt><b>Social Contract (Lens)</b></dt>
+          <dd>Would these rules be acceptable if you didn’t know your position? Name benefit/cost distribution and defend fairness under uncertainty.</dd>
+
+          <dt><b>Capabilities (Lens)</b></dt>
+          <dd>Which basic functionings rise and for whom? Identify residual risks and one mitigation.</dd>
+
+          <dt><b>Care &amp; Proximity (Lens)</b></dt>
+          <dd>Near obligations created by interdependence (roommates, classmates, local workers). Commit to a specific action this month.</dd>
+
+          <dt><b>Pluralism by design</b></dt>
+          <dd>Different rule sets can be <i>functionally equivalent</i> toward overlapping goods (e.g., stability, fairness, lower harm) even if their worldviews differ.</dd>
+
+          <dt><b>Objectivity as procedure</b></dt>
+          <dd>Transparency and reviewability of your rules, evidence, and trade-offs—rather than a “view from nowhere.”</dd>
+        </dl>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="card">
-  <h3>Why this matters</h3>
+  <h3>Keep the focus</h3>
   <p class="small">
-    Living ethically in a market society means designing the <b>rules</b> you will support (with your purchases, votes, and voice), showing the
-    <b>trade-offs</b> honestly, and taking <b>practical steps</b> that align with your deepest commitments. This lab helps you practice that.
+    You’re practicing ethical system design at student-scale: choose rules, show effects, justify with shared lenses, and commit to a near-term action.
   </p>
 </footer>
-
-<!-- Single tooltip node -->
-<div id="tooltip" role="dialog" aria-hidden="true"></div>
 
 <script>
 /* --------------------------
@@ -500,7 +512,7 @@ const CONTEXTS = {
         note:"Improves bargaining & local education via co-ops.",
         vec:{ workers:+2, env:+1, cost:+1 },
         caps:{ "Voice & Recognition":+2, "Education & Skill":+1 } },
-        { id:"transparent_premium", label:"Transparent premium to producers",
+      { id:"transparent_premium", label:"Transparent premium to producers",
         note:"Shows how much reaches farmers; pressures middlemen.",
         vec:{ workers:+2, env:+0, cost:+1 },
         caps:{ "Voice & Recognition":+1, "Decent Work":+1 } }
@@ -513,50 +525,6 @@ let state = {
   selected: new Set(),
   metrics: { workers: 0, env: 0, cost: 0, caps:{} },
   memo: { sc:"", cap:"", care:"" }
-};
-
-/* --------------------------
-   GLOSSARY POPOVER CONTENT
--------------------------- */
-const GLOSSARY = {
-  context: {
-    title: "Context",
-    body: "The industry or setting you’re analyzing. Different contexts concentrate different harms/benefits, so guardrails that work in one may be irrelevant in another."
-  },
-  preset: {
-    title:"Presets",
-    body:"Quick starting points: Minimal = one high-leverage rule; Robust = all listed rules (maximal protection, higher cost)."
-  },
-  guardrails: {
-    title:"Guardrails",
-    body:"Explicit rules that change incentives (e.g., living wage, repairability). Think of these as ‘mini constitutions’ for this context."
-  },
-  impacts: {
-    title:"Predicted Impacts",
-    body:"Simple teaching-model vectors (−5…+5). Workers & Environment move right when better; Cost moves left when cheaper."
-  },
-  workers: { title:"Workers", body:"Effects on dignity, stability, safety, and bargaining power in the supply chain or workplace." },
-  environment: { title:"Environment", body:"Effects on resource use, waste, emissions, and biodiversity." },
-  cost: { title:"Consumer Cost", body:"Near-term price impact to you; sometimes higher short-run cost saves money long-run (e.g., repairability)." },
-  capabilities: {
-    title:"Capabilities",
-    body:"Basic functionings safeguarded or expanded by your chosen guardrails: Decent Work, Health & Safety, Education & Skill, Voice & Recognition, Ecological Stability."
-  },
-  memo: { title:"Memo", body:"Your public justification using three lenses: Social Contract (fairness), Capabilities (functionings), and Care (near obligations + concrete action)." },
-  social_contract: { title:"Social Contract", body:"Would this rule set be acceptable if you didn’t know your position (worker, consumer, neighbor)? Who gains/loses and why?" },
-  care: { title:"Care & Proximity", body:"What do you owe those near you (roommates, classmates, local workers) given dependence and impact? Commit to a concrete action this month." },
-  export: { title:"Export / Import", body:"No accounts. Export JSON to submit or save. Import to continue where you left off." },
-  cheat: { title:"Cheat Sheet", body:"A one-page reference with steps, grading snapshot, and rationale. Print or save as PDF." },
-  glossary: { title:"Glossary", body:"Short definitions for PRF, SPTS, OS1/OS2, IK, BROA+, Constructors, Meta-constructors, ATCF mini." },
-  PRF: { title:"PRF — Phenomenal Reference Frame", body:"Your internal model now: identity, filters, goals, expectations. Generates OS1 and constrains which OS2 procedures feel legitimate." },
-  SPTS:{ title:"SPTS — Standpoint Set", body:"Stable social/positional roles biasing default voice/standing and evidence weights (student, caregiver, worker…)." },
-  OS1: { title:"OS1 — Phenomenal Layer", body:"What feels salient and obvious now; your lived field of experience." },
-  OS2: { title:"OS2 — Procedural Layer", body:"Explicit methods you can show/test (capabilities, constructors, audits) that can also reshape OS1 over time." },
-  IK: { title:"Identity Kernel", body:"Your 2–4 non-negotiables (e.g., no exploitation, tell the truth)." },
-  BROA: { title:"BROA+", body:"Beliefs, Rules, Ontology, Authenticity—the filters shaping interpretation and action." },
-  constructor: { title:"Constructor", body:"A persistent procedure with triggers, inputs/outputs, and a review schedule." },
-  meta_constructor: { title:"Meta-Constructor", body:"A learning loop that evaluates and updates constructors on cadence (e.g., monthly rubric + change log)." },
-  ATCF: { title:"ATCF mini", body:"Mini rubric across Identity Kernel alignment (IK), Recognition (RC), Diversity Inclusion (DI), and Temporal Coherence (TC)." }
 };
 
 /* --------------------------
@@ -620,7 +588,7 @@ function renderGuardrails(){
       <input type="checkbox" id="gr_${g.id}" ${state.selected.has(g.id)?"checked":""} aria-label="${g.label}">
       <label for="gr_${g.id}" style="margin:0;flex:1">
         ${g.label}
-        <span class="badge" title="${g.note}">why?</span>
+        <span class="badge">why?</span>
         <div class="note hint small">${g.note}</div>
       </label>
       <span class="chip">${impactChip(g.vec)}</span>
@@ -772,63 +740,6 @@ function applyPreset(val){
   renderGuardrails(); computeImpacts(); renderImpacts(); exportState();
 }
 
-/* --------------------------
-   TOOLTIP (POPOVER)
--------------------------- */
-
-let tipNode, tipShown = false, tipHideTimer = null;
-
-function showTip(el){
-  clearTimeout(tipHideTimer);
-  const key = el.getAttribute("data-key");
-  const data = GLOSSARY[key];
-  if(!data) return;
-  tipNode = tipNode || document.getElementById("tooltip");
-  tipNode.innerHTML = `<h4>${data.title}</h4><p>${data.body}</p>`;
-  tipNode.style.display = "block";
-  tipNode.setAttribute("aria-hidden","false");
-  // position
-  const r = el.getBoundingClientRect();
-  const pad = 8;
-  let top = r.bottom + pad + window.scrollY;
-  let left = r.left + window.scrollX;
-  // keep on-screen
-  const maxLeft = window.scrollX + document.documentElement.clientWidth - tipNode.offsetWidth - 10;
-  left = Math.min(left, maxLeft);
-  tipNode.style.top = top + "px";
-  tipNode.style.left = left + "px";
-  tipShown = true;
-}
-function hideTipSoon(){
-  clearTimeout(tipHideTimer);
-  tipHideTimer = setTimeout(()=>{
-    if(tipNode){
-      tipNode.style.display = "none";
-      tipNode.setAttribute("aria-hidden","true");
-      tipShown = false;
-    }
-  }, 120);
-}
-function wireTooltips(){
-  document.querySelectorAll(".info").forEach(el=>{
-    el.addEventListener("mouseenter", ()=> showTip(el));
-    el.addEventListener("mouseleave", hideTipSoon);
-    el.addEventListener("focus", ()=> showTip(el));
-    el.addEventListener("blur", hideTipSoon);
-    el.addEventListener("click", (e)=>{ // toggle on click for touch users
-      if(tipShown) hideTipSoon(); else showTip(el);
-      e.stopPropagation();
-    });
-  });
-  document.addEventListener("click", (e)=>{
-    if(tipNode && !tipNode.contains(e.target) && !e.target.classList.contains("info")) hideTipSoon();
-  });
-}
-
-/* --------------------------
-   INIT
--------------------------- */
-
 function wire(){
   renderContexts();
   renderGuardrails();
@@ -861,9 +772,6 @@ function wire(){
 
   // Print-only cheat sheet
   document.getElementById("printCheatBtn").addEventListener("click", ()=> window.print());
-
-  // Tooltips
-  wireTooltips();
 }
 
 wire();
